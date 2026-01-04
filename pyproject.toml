@@ -1,0 +1,37 @@
+# pyproject.toml
+[project]
+name = "langgraph_career_agent_simple"
+version = "0.1.0"
+description = "Career Consulting Agent using LangGraph, Streamlit and Groq (Simplified)"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "streamlit>=1.50.0",
+    "pymongo>=4.14.1",
+    "python-dotenv>=1.0.0",
+    "langgraph>=0.0.70",
+    "langchain-groq>=0.1.0",
+    "langchain-community>=0.0.30",
+    "google-api-python-client", # Dependency for SerperWrapper
+    "pyyaml>=6.0",
+    "typing_extensions>=4.0",
+    "rich>=13.0",
+    "requests>=2.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# --- ADD/MODIFY THIS SECTION ---
+[tool.hatch.build.targets.wheel]
+# Explicitly include the Python files in the root directory
+# Hatch considers the project root as the source here.
+include = [
+    "/db.py",
+    "/career_logic.py",
+    "/streamlit_app.py",
+]
+# We are not defining standard 'packages' as the code is in the root
+# packages = ["app"] # This was for the previous structure
+# --- END OF SECTION ---
