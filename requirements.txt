@@ -1,0 +1,11 @@
+streamlit
+python-dotenv
+requests
+rich
+
+langchain
+langchain-core
+langchain-groq
+langgraph
+
+pymongo
